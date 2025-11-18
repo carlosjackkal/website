@@ -143,8 +143,17 @@
                         <div class="layer-number">4</div>
                         <div class="layer-content">
                             <h3><a href="https://github.com/BTCDecoded/bllvm-node" target="_blank">bllvm-node</a></h3>
-                            <p class="layer-type">Full Node</p>
-                            <p>Complete Bitcoin node using bllvm-protocol and bllvm-consensus. Adds storage, networking, and RPC. <strong>Optional features:</strong> Iroh QUIC transport (NAT traversal), Quinn QUIC transport, UTXO commitments (faster initial sync).</p>
+                            <p class="layer-type">Full Node Library</p>
+                            <p>Complete Bitcoin node library using bllvm-protocol and bllvm-consensus. Adds storage, networking, and RPC. <strong>Optional features:</strong> Iroh QUIC transport (NAT traversal), Quinn QUIC transport, UTXO commitments (faster initial sync).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="layer">
+                        <div class="layer-number">4</div>
+                        <div class="layer-content">
+                            <h3><a href="https://github.com/BTCDecoded/bllvm" target="_blank">bllvm</a></h3>
+                            <p class="layer-type">Binary Wrapper</p>
+                            <p>Standalone binary executable that wraps bllvm-node. Provides command-line interface for running a full Bitcoin node. Depends on bllvm-node library.</p>
                         </div>
                     </div>
                     
@@ -169,7 +178,7 @@
                     <div class="layer">
                         <div class="layer-number">7</div>
                         <div class="layer-content">
-                            <h3><a href="https://github.com/BTCDecoded/governance-app" target="_blank">governance-app</a></h3>
+                            <h3><a href="https://github.com/BTCDecoded/bllvm-commons" target="_blank">bllvm-commons</a></h3>
                             <p class="layer-type">Cryptographic Enforcement</p>
                             <p>GitHub App enforcing governance rules through signature verification and review periods. Uses bllvm-sdk for cryptographic operations. <strong>Phase 1:</strong> Infrastructure complete, enforcement not yet activated.</p>
                         </div>
@@ -177,7 +186,7 @@
                 </div>
                 
                         <div class="architecture-note">
-                            <p><strong>Dependency Chain:</strong> Orange Paper → bllvm-consensus (formally verified with Kani model checking) → bllvm-protocol → bllvm-node → bllvm-sdk → governance + governance-app. All consensus decisions flow through the mathematically proven bllvm-consensus layer.</p>
+                            <p><strong>Dependency Chain:</strong> Orange Paper → bllvm-consensus (formally verified with Kani model checking) → bllvm-protocol → bllvm-node → bllvm (binary wrapper) → bllvm-sdk → governance + bllvm-commons. All consensus decisions flow through the mathematically proven bllvm-consensus layer.</p>
                         </div>
                     </div>
                     
