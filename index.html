@@ -71,7 +71,7 @@
                 <a href="https://docs.thebitcoincommons.org" class="btn btn-secondary" target="_blank" rel="noopener">Documentation</a>
                 <a href="https://btccommons.substack.com" class="btn btn-secondary" target="_blank" rel="noopener">Subscribe on Substack</a>
                 <a href="#repositories" class="btn btn-secondary">Explore Repositories</a>
-                <a href="https://github.com/BTCDecoded/bllvm-spec" class="btn btn-outline" target="_blank">Read the Orange Paper</a>
+                <a href="https://github.com/BTCDecoded/blvm-spec" class="btn btn-outline" target="_blank">Read the Orange Paper</a>
             </div>
         </div>
     </section>
@@ -109,13 +109,13 @@
             <div class="content">
                 <div class="architecture-with-diagram">
                     <div class="architecture-content">
-                        <p>BTCDecoded's 7-repository stack enforces correctness through mathematical specification and formal verification. The Orange Paper provides the mathematical foundation; bllvm-consensus implements it with formal verification (Kani model checking); all higher layers depend directly on bllvm-consensus. See the <a href="https://docs.thebitcoincommons.org/architecture/system-overview.html" target="_blank" rel="noopener">architecture documentation</a> for detailed technical information.</p>
+                        <p>BTCDecoded's 7-repository stack enforces correctness through mathematical specification and formal verification. The Orange Paper provides the mathematical foundation; blvm-consensus implements it with formal verification (Kani model checking); all higher layers depend directly on blvm-consensus. See the <a href="https://docs.thebitcoincommons.org/architecture/system-overview.html" target="_blank" rel="noopener">architecture documentation</a> for detailed technical information.</p>
                         
                         <div class="architecture">
                     <div class="layer layer-foundation">
                         <div class="layer-number">1</div>
                         <div class="layer-content">
-                            <h3><a href="https://github.com/BTCDecoded/bllvm-spec" target="_blank">bllvm-spec</a></h3>
+                            <h3><a href="https://github.com/BTCDecoded/blvm-spec" target="_blank">blvm-spec</a></h3>
                             <p class="layer-type">Mathematical Specification</p>
                             <p>Complete mathematical specification of Bitcoin consensus extracted from Bitcoin Core. Includes the 21 million supply convergence proof (Theorem 6.1).</p>
                         </div>
@@ -124,7 +124,7 @@
                     <div class="layer layer-core">
                         <div class="layer-number">2</div>
                         <div class="layer-content">
-                            <h3><a href="https://github.com/BTCDecoded/bllvm-consensus" target="_blank">bllvm-consensus</a></h3>
+                            <h3><a href="https://github.com/BTCDecoded/blvm-consensus" target="_blank">blvm-consensus</a></h3>
                             <p class="layer-type">Formally Verified Implementation</p>
                             <p>Pure Rust implementation of Orange Paper functions with <strong>Kani model checking</strong> for formal verification. All consensus decisions are mathematically proven. UTXO set operations verified for consistency and double-spend prevention.</p>
                             <p class="tech-detail"><strong>Formal Verification:</strong> Kani proofs verified in source code. Chain selection, block subsidy (21M limit proof), proof-of-work, transaction validation all verified with bounded model checking.</p>
@@ -134,34 +134,34 @@
                     <div class="layer">
                         <div class="layer-number">3</div>
                         <div class="layer-content">
-                            <h3><a href="https://github.com/BTCDecoded/bllvm-protocol" target="_blank">bllvm-protocol</a></h3>
+                            <h3><a href="https://github.com/BTCDecoded/blvm-protocol" target="_blank">blvm-protocol</a></h3>
                             <p class="layer-type">Protocol Abstraction</p>
-                            <p>Bitcoin variant abstraction (mainnet, testnet, regtest) built on bllvm-consensus. All consensus calls go through the formally verified layer.</p>
+                            <p>Bitcoin variant abstraction (mainnet, testnet, regtest) built on blvm-consensus. All consensus calls go through the formally verified layer.</p>
                         </div>
                     </div>
                     
                     <div class="layer">
                         <div class="layer-number">4</div>
                         <div class="layer-content">
-                            <h3><a href="https://github.com/BTCDecoded/bllvm-node" target="_blank">bllvm-node</a></h3>
+                            <h3><a href="https://github.com/BTCDecoded/blvm-node" target="_blank">blvm-node</a></h3>
                             <p class="layer-type">Full Node Library</p>
-                            <p>Complete Bitcoin node library using bllvm-protocol and bllvm-consensus. Adds storage, networking, and RPC. <strong>Optional features:</strong> Iroh QUIC transport (NAT traversal), Quinn QUIC transport, UTXO commitments (faster initial sync).</p>
+                            <p>Complete Bitcoin node library using blvm-protocol and blvm-consensus. Adds storage, networking, and RPC. <strong>Optional features:</strong> Iroh QUIC transport (NAT traversal), Quinn QUIC transport, UTXO commitments (faster initial sync).</p>
                         </div>
                     </div>
                     
                     <div class="layer">
                         <div class="layer-number">5</div>
                         <div class="layer-content">
-                            <h3><a href="https://github.com/BTCDecoded/bllvm" target="_blank">bllvm</a></h3>
+                            <h3><a href="https://github.com/BTCDecoded/blvm" target="_blank">blvm</a></h3>
                             <p class="layer-type">Binary Wrapper</p>
-                            <p>Standalone binary executable that wraps bllvm-node. Provides command-line interface for running a full Bitcoin node. Depends on bllvm-node library.</p>
+                            <p>Standalone binary executable that wraps blvm-node. Provides command-line interface for running a full Bitcoin node. Depends on blvm-node library.</p>
                         </div>
                     </div>
                     
                     <div class="layer">
                         <div class="layer-number">6</div>
                         <div class="layer-content">
-                            <h3><a href="https://github.com/BTCDecoded/bllvm-sdk" target="_blank">bllvm-sdk</a></h3>
+                            <h3><a href="https://github.com/BTCDecoded/blvm-sdk" target="_blank">blvm-sdk</a></h3>
                             <p class="layer-type">Developer Toolkit</p>
                             <p>Developer toolkit for building alternative Bitcoin implementations. Provides module composition framework for declaratively assembling custom Bitcoin nodes, plus governance cryptographic primitives.</p>
                         </div>
@@ -179,22 +179,22 @@
                     <div class="layer">
                         <div class="layer-number">8</div>
                         <div class="layer-content">
-                            <h3><a href="https://github.com/BTCDecoded/bllvm-commons" target="_blank">bllvm-commons</a></h3>
+                            <h3><a href="https://github.com/BTCDecoded/blvm-commons" target="_blank">blvm-commons</a></h3>
                             <p class="layer-type">Cryptographic Enforcement</p>
-                            <p>GitHub App enforcing governance rules through signature verification and review periods. Uses bllvm-sdk for cryptographic operations. <strong>Phase 1:</strong> Infrastructure complete, enforcement not yet activated.</p>
+                            <p>GitHub App enforcing governance rules through signature verification and review periods. Uses blvm-sdk for cryptographic operations. <strong>Phase 1:</strong> Infrastructure complete, enforcement not yet activated.</p>
                         </div>
                     </div>
                 </div>
                 
                         <div class="architecture-note">
-                            <p><strong>Dependency Chain:</strong> Orange Paper → bllvm-consensus (formally verified with Kani model checking) → bllvm-protocol → bllvm-node → bllvm (binary wrapper) → bllvm-sdk → governance → bllvm-commons. All consensus decisions flow through the mathematically proven bllvm-consensus layer.</p>
-                            <p><strong>Note:</strong> bllvm-node and bllvm are both part of the Application Layer (Layer 4-5). governance and bllvm-commons are both part of the Governance Infrastructure Layer (Layer 7-8).</p>
+                            <p><strong>Dependency Chain:</strong> Orange Paper → blvm-consensus (formally verified with Kani model checking) → blvm-protocol → blvm-node → blvm (binary wrapper) → blvm-sdk → governance → blvm-commons. All consensus decisions flow through the mathematically proven blvm-consensus layer.</p>
+                            <p><strong>Note:</strong> blvm-node and blvm are both part of the Application Layer (Layer 4-5). governance and blvm-commons are both part of the Governance Infrastructure Layer (Layer 7-8).</p>
                         </div>
                     </div>
                     
                     <div class="architecture-diagram">
-                        <img src="assets/images/stack.png" alt="BLLVM Stack Architecture">
-                        <p class="diagram-caption">BLLVM architecture showing bllvm-spec (Orange Paper) as the foundation, bllvm-consensus as the core implementation with verification paths (Kani proofs, spec drift detection, hash verification), and dependent components (bllvm-protocol, bllvm-node, bllvm-sdk) building on the verified consensus layer.</p>
+                        <img src="assets/images/stack.png" alt="BLVM Stack Architecture">
+                        <p class="diagram-caption">BLVM architecture showing blvm-spec (Orange Paper) as the foundation, blvm-consensus as the core implementation with verification paths (Kani proofs, spec drift detection, hash verification), and dependent components (blvm-protocol, blvm-node, blvm-sdk) building on the verified consensus layer.</p>
                     </div>
                 </div>
             </div>
@@ -204,7 +204,7 @@
     <!-- Download Section -->
     <section id="download" class="section">
         <div class="container">
-            <h2>Download BLLVM</h2>
+            <h2>Download BLVM</h2>
             <div class="content">
                 <p class="download-intro">Bitcoin node implementation with formal verification</p>
                 <div class="download-card">
@@ -218,7 +218,7 @@
                         <div class="download-option available">
                             <h4>Source Code</h4>
                             <p>Available now on GitHub</p>
-                            <a href="https://github.com/BTCDecoded/bllvm-node/releases" class="btn btn-primary" target="_blank">View Releases</a>
+                            <a href="https://github.com/BTCDecoded/blvm-node/releases" class="btn btn-primary" target="_blank">View Releases</a>
                         </div>
                         
                         <div class="download-option coming-soon">
@@ -239,11 +239,11 @@
     <!-- Orange Paper Section -->
     <section id="orange-paper" class="section">
         <div class="container">
-            <h2>The Orange Paper (bllvm-spec)</h2>
+            <h2>The Orange Paper (blvm-spec)</h2>
             <div class="content">
                 <div class="orange-paper-with-diagram">
                     <div class="orange-paper-content">
-                        <p>The Orange Paper is the first complete mathematical specification of Bitcoin's consensus protocol. Unlike previous descriptions, this specification is derived entirely from the current Bitcoin Core codebase and represents the protocol as it exists today. The specification is available in the <a href="https://github.com/BTCDecoded/bllvm-spec" target="_blank" rel="noopener">bllvm-spec repository</a> and in the <a href="https://docs.thebitcoincommons.org/reference/orange-paper.html" target="_blank" rel="noopener">unified documentation</a>.</p>
+                        <p>The Orange Paper is the first complete mathematical specification of Bitcoin's consensus protocol. Unlike previous descriptions, this specification is derived entirely from the current Bitcoin Core codebase and represents the protocol as it exists today. The specification is available in the <a href="https://github.com/BTCDecoded/blvm-spec" target="_blank" rel="noopener">blvm-spec repository</a> and in the <a href="https://docs.thebitcoincommons.org/reference/orange-paper.html" target="_blank" rel="noopener">unified documentation</a>.</p>
                         
                         <p>Using AI-assisted extraction, we've formalized Bitcoin's consensus rules into mathematical functions that can be used to build alternative implementations without consensus risk.</p>
                         
@@ -263,15 +263,15 @@
                                     <p>Since the subsidy becomes 0 after 64 halvings (height 13,440,000), the total supply is exactly:</p>
                                     <div class="math-formula">$$\text{TotalSupply}(13,440,000) = 50 \times C \times \sum_{i=0}^{63} \left(\frac{1}{2}\right)^i = 50 \times C \times \frac{1 - (1/2)^{64}}{1 - 1/2} = 100 \times C \times (1 - 2^{-64})$$</div>
                                     <p>For practical purposes, $2^{-64} \approx 0$, so the total supply is effectively 21 million BTC.</p>
-                                    <p class="proof-source">Source: <a href="https://github.com/BTCDecoded/bllvm-spec/blob/main/THE_ORANGE_PAPER.md#theorem-82" target="_blank" rel="noopener">Orange Paper, Theorem 8.2</a></p>
+                                    <p class="proof-source">Source: <a href="https://github.com/BTCDecoded/blvm-spec/blob/main/THE_ORANGE_PAPER.md#theorem-82" target="_blank" rel="noopener">Orange Paper, Theorem 8.2</a></p>
                                 </div>
                                 
                                 <div class="proof-panel" data-panel="kani">
                                     <p class="kani-description">This Rust code is formally verified using Kani model checking to prove the supply convergence property.</p>
                                     <div class="code-container">
                                         <div class="code-header">
-                                            <span class="code-filename">bllvm-consensus/src/economic.rs</span>
-                                            <a href="https://github.com/BTCDecoded/bllvm-consensus/blob/main/src/economic.rs#L317" target="_blank" rel="noopener" class="code-link">View on GitHub →</a>
+                                            <span class="code-filename">blvm-consensus/src/economic.rs</span>
+                                            <a href="https://github.com/BTCDecoded/blvm-consensus/blob/main/src/economic.rs#L317" target="_blank" rel="noopener" class="code-link">View on GitHub →</a>
                                         </div>
                                         <pre><code class="language-rust">/// Kani proof: Supply Convergence (Orange Paper Theorem 8.2)
 ///
@@ -333,7 +333,7 @@ fn kani_supply_convergence() {
                         </div>
                         
                         <a href="https://docs.thebitcoincommons.org/reference/orange-paper.html" class="btn btn-primary" target="_blank" rel="noopener">Read in Documentation</a>
-                        <a href="https://github.com/BTCDecoded/bllvm-spec" class="btn btn-outline" target="_blank" rel="noopener">View on GitHub</a>
+                        <a href="https://github.com/BTCDecoded/blvm-spec" class="btn btn-outline" target="_blank" rel="noopener">View on GitHub</a>
                     </div>
                     
                     <div class="coverage-diagram">
