@@ -250,13 +250,14 @@
                             
                             <div class="proof-content">
                                 <div class="proof-panel active" data-panel="math">
-                                    <p><strong>Theorem 8.2</strong> (Supply Convergence): The total supply converges to exactly 21 million BTC.</p>
-                                    <p><em>Proof:</em> From Theorem 6.1, we have:</p>
+                                    <p><strong>Theorem 6.2.3</strong> (Supply Convergence): The total supply converges to exactly 21 million BTC.</p>
+                                    <p><em>Proof:</em> The total supply can be expressed as a sum of geometric series. For each halving period $k$ (where $k = \lfloor h/H \rfloor$), the subsidy is $50 \times C \times 2^{-k}$ for $H$ consecutive blocks.</p>
                                     <div class="math-formula">$$\lim_{h \to \infty} \text{TotalSupply}(h) = 21 \times 10^6 \times C$$</div>
-                                    <p>Since the subsidy becomes 0 after 64 halvings (height 13,440,000), the total supply is exactly:</p>
-                                    <div class="math-formula">$$\text{TotalSupply}(13,440,000) = 50 \times C \times \sum_{i=0}^{63} \left(\frac{1}{2}\right)^i = 50 \times C \times \frac{1 - (1/2)^{64}}{1 - 1/2} = 100 \times C \times (1 - 2^{-64})$$</div>
-                                    <p>For practical purposes, $2^{-64} \approx 0$, so the total supply is effectively 21 million BTC.</p>
-                                    <p class="proof-source">Source: <a href="https://github.com/BTCDecoded/blvm-spec/blob/main/THE_ORANGE_PAPER.md#theorem-82" target="_blank" rel="noopener">Orange Paper, Theorem 8.2 (GitHub)</a></p>
+                                    <p>The total supply is:</p>
+                                    <div class="math-formula">$$\text{TotalSupply}(\infty) = \sum_{k=0}^{63} H \times 50 \times C \times 2^{-k} = H \times 50 \times C \times \sum_{k=0}^{63} 2^{-k}$$</div>
+                                    <p>Since $\sum_{k=0}^{63} 2^{-k} = 2 - 2^{-63} \approx 2$ for large $k$:</p>
+                                    <div class="math-formula">$$\text{TotalSupply}(\infty) \approx H \times 50 \times C \times 2 = 210,000 \times 50 \times 10^8 \times 2 = 21 \times 10^6 \times 10^8 = 21 \times 10^6 \times C$$</div>
+                                    <p class="proof-source">Source: <a href="https://github.com/BTCDecoded/blvm-spec/blob/main/THE_ORANGE_PAPER.md#theorem-623-supply-convergence" target="_blank" rel="noopener">Orange Paper, Theorem 6.2.3 (GitHub)</a></p>
                                 </div>
                                 
                                 <div class="proof-panel" data-panel="formal">
