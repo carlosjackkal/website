@@ -789,7 +789,7 @@ code {
     text-decoration: underline;
 }
 
-.kani-description {
+.formal-proof-description {
     color: #666;
     margin-bottom: 1.5rem;
     flex-shrink: 0;
