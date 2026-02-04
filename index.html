@@ -264,24 +264,15 @@
                                     <div class="code-container">
                                         <div class="code-header">
                                             <span class="code-filename">blvm-consensus/src/economic.rs</span>
-                                            <a href="https://github.com/BTCDecoded/blvm-consensus/blob/main/src/economic.rs#L317" target="_blank" rel="noopener" class="code-link">View on GitHub →</a>
+                                            <a href="https://github.com/BTCDecoded/blvm-consensus/blob/main/src/economic.rs#L55" target="_blank" rel="noopener" class="code-link">View on GitHub →</a>
                                         </div>
-                                        <pre><code class="language-rust">/// blvm-spec-lock proof: Supply Convergence (Orange Paper Theorem 8.2)
+                                        <pre><code class="language-rust">/// TotalSupply: ℕ → ℤ
 ///
-/// Mathematical specification:
-/// lim(h→∞) TotalSupply(h) = 21 × 10⁶ × C
-///
-/// This proves that the total supply converges to exactly 21 million BTC.
-/// After 64 halvings (height 13,440,000), the subsidy becomes 0, so:
-/// TotalSupply(13,440,000) = 50 × C × Σ(i=0 to 63) (1/2)^i = 100 × C × (1 - 2^-64)
-/// For practical purposes, 2^-64 ≈ 0, so supply ≈ 21M BTC.
-#[spec_locked("8.2")]
-#[requires(height >= 0)]
-#[ensures(result >= 0)]
-#[ensures(result <= MAX_MONEY)]
-pub fn total_supply(height: u64) -> i64 {
+/// Calculate the total Bitcoin supply at a given height.
+/// This is the sum of all block subsidies up to that height.
+#[spec_locked("6.2")]
+pub fn total_supply(height: Natural) -> Integer {
     // Implementation verified with blvm-spec-lock and Z3
-    // All consensus decisions flow through formally verified functions
 }</code></pre>
                                     </div>
                                 </div>
